@@ -1,9 +1,20 @@
 import { createStore } from "vuex";
 
 export default createStore({
-  state: {},
+  state: {
+    isMenuOpen: false,
+    listName: "Günümüz",
+  },
   getters: {},
-  mutations: {},
-  actions: {},
+  mutations: {
+    update(state) {
+      state.isMenuOpen = !state.isMenuOpen;
+    },
+  },
+  actions: {
+    updateMenu(context) {
+      context.commit("update");
+    },
+  },
   modules: {},
 });
